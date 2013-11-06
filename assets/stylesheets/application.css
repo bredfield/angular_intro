@@ -5944,3 +5944,10 @@ td.visible-print {
     margin-top: 0;
   }
 }
+.employee-select {
+  width: 40%;
+  margin-right: 5px;
+}
+.count-input {
+  width: 30%;
+}

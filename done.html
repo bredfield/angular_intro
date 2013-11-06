@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="Sneeze">
+<html ng-app="Sneezes">
   <head>
     <title>Title!</title>
     <meta content='' name='description'>
@@ -16,8 +16,7 @@
       
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          
-          <h3># of push-ups today: {{totalSneezes * pushupModifier}}</h3>
+          <h3># of push-ups today: {{sneezeTotal * pushupModifier}}</h3>
           
           <table class="table">
             <thead>
@@ -29,24 +28,19 @@
             <tbody>
               <tr ng-repeat="sneeze in sneezes">
                 <td>{{sneeze.name}}</td>
-                <td>{{sneeze.count}} <div class="btn btn-small btn-primary" ng-click="deleteSneeze(sneeze)">x</div></td>
+                <td>{{sneeze.count}}</td>
               </tr>
             </tbody>
           </table>
-          
           <form class="form-inline" ng-submit="addSneeze()" submit-clear>
-            <select class="form-control employee-select" ng-model="sneezeName" ng-options="employee for employee in employees">
-            </select>
-
-            <input type='text' class="form-control count-input" placeholder="How many times?" ng-model="sneezeCount">
-
+            <select class="form-control employee-select" ng-model="employeeInput" ng-options="employee for employee in employees" required>
+            <input class="form-control count-input" ng-model="countInput" placeholder="How many times?">
             <input type="submit" value="Submit" class="btn btn-primary">
-
           </form>
-
         </div><!-- .col-md-6 col-md-offset-6 -->
       </div><!-- .row -->
     </div><!-- .container -->
+
     <!-- /Load script files -->
     <script src='assets/javascripts/application.js' type='text/javascript'></script>
   </body>
